@@ -9,7 +9,7 @@ function typeWriter(text, i, fnCallback) {
         }, Math.random() * 100 + 50);
     } else if (typeof fnCallback == 'function') {
         // Espera un poco antes de iniciar el borrado
-        setTimeout(fnCallback, 1500);
+        setTimeout(fnCallback, 5000);
     }
 }
 
@@ -29,7 +29,7 @@ function eraseText(text, i, fnCallback) {
 
 // Función para iniciar el ciclo de escritura-borrado
 function startTextAnimation() {
-    const text = "WELCOME";
+    const text = "WELCOME..";
     
     // Inicia la escritura
     typeWriter(text, 0, function() {
