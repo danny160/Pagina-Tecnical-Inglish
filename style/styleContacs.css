@@ -216,3 +216,85 @@ main {
     position: relative;
 }
 
+/* Estilos para el formulario de contacto */
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background: linear-gradient(to right, #000, #0a2e38);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+.contact-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd700; /* Color amarillo dorado */
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.contact-icon {
+    color: white;
+    font-size: 18px;
+}
+
+.contact-text {
+    color: white;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-heading {
+        font-size: 2.5rem;
+    }
+
+    .contact-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-heading {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
