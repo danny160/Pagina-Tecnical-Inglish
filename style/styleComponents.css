@@ -30,7 +30,7 @@ header {
 
 .navbar {
     background-color: #3a0a2e;
-    padding: 10px 20px;
+    padding: 8px 20px; /* Reducido el padding vertical */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +39,7 @@ header {
 /* Logo */
 .logo {
     width: 100%;
-    height: 50px;
+    height: 40px; /* Reducido ligeramente */
     margin-left: 10px;
     animation: pulse 2s infinite;
 }
@@ -121,11 +121,11 @@ header {
 
 /* Menú lateral */
 .side-menu {
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 60px; /* Ajustado para el header más pequeño */
     right: -210px;
     width: 210px;
-    height: 100%;
+    height: calc(100% - 60px);
     background-color: #3a0a2e;
     transition: right 0.3s ease;
     z-index: 1000;
@@ -155,7 +155,7 @@ header {
 }
 
 .menu-items li {
-    padding: 20px 0;
+    padding: 15px 0; /* Reducido el padding */
     text-align: center;
     transition: background-color 0.3s ease;
     opacity: 0;
@@ -210,9 +210,472 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 100px);
     width: 100%;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Animaciones para elementos */
+.animate-element {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el contenido de Components */
+.components-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Título principal */
+.components-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.components-title h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #E2BD08; /* Azafrán de la paleta */
+    text-transform: uppercase;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Grid de componentes */
+.components-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.components-grid .row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Elementos de componentes */
+.component-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Aumentado para dar más espacio */
+    margin-bottom: 5px;
+}
+
+.component-circle {
+    width: 140px; /* Aumentado para imágenes más grandes */
+    height: 140px; /* Aumentado para imágenes más grandes */
+    border-radius: 50%;
+    background-color: #0190AB; /* Azul Munsell de la paleta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
     overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.component-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(1, 144, 171, 0.7);
+}
+
+.component-circle img {
+    width: 85%; /* Aumentado para imágenes más grandes */
+    height: 85%; /* Aumentado para imágenes más grandes */
+    object-fit: contain;
+}
+
+.component-item p {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+/* Ajuste para cuando el menú está activo */
+.side-menu.active ~ #mainContent {
+    width: calc(100% - 210px);
+    margin-right: 210px;
+}
+
+/* Footer más compacto */
+footer {
+    padding: 8px 0 !important;
+}
+
+/* Estilos para los modales - SIMPLIFICADOS */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1500;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.component-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Lado izquierdo del modal */
+.modal-left {
+    flex: 60;
+    display: flex;
+    flex-direction: column;
+    background-color: #0a0a2a; /* Color azul oscuro exacto como en la imagen */
+    max-height: 80vh; /* Asegurar que no exceda la altura de la ventana */
+}
+
+/* Encabezado púrpura */
+.modal-header {
+    background-color: #792359; /* Color púrpura exacto como en la imagen */
+    padding: 10px 20px;
+    width: 100%;
+    flex-shrink: 0; /* Evitar que el encabezado se encoja */
+}
+
+.modal-header h2 {
+    color: #E2BD08; /* Color amarillo exacto como en la imagen */
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+/* Contenido de texto con scroll */
+.modal-info {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto; /* Añadir scroll vertical */
+    max-height: calc(80vh - 70px); /* Altura máxima considerando el encabezado */
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: #4dabf7 #0a0a2a; /* Para Firefox */
+}
+
+/* Estilo para la barra de desplazamiento en Chrome, Edge, y Safari */
+.modal-info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-info::-webkit-scrollbar-track {
+    background: #0a0a2a;
+}
+
+.modal-info::-webkit-scrollbar-thumb {
+    background-color: #4dabf7;
+    border-radius: 10px;
+    border: 2px solid #0a0a2a;
+}
+
+.modal-info h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Clase para los textos destacados en azul claro */
+.highlight-blue {
+    color: #4dabf7 !important; /* Azul claro */
+}
+
+.modal-info p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Estilos para las listas en los modales */
+.modal-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-info ul li {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.brand {
+    color: #E2BD08; /* Color amarillo exacto como en la imagen */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.brand:hover {
+    color: #ffda47;
+}
+
+/* Lado derecho del modal */
+.modal-right {
+    flex: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E4971; /* Color azul más claro para el fondo derecho */
     position: relative;
 }
 
+/* Imagen en círculo púrpura */
+.modal-image-circle {
+    width: 90%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #400B2D; /* Color púrpura exacto como en la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.modal-image-circle img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+/* Botón de cierre */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #E2BD08;
+    transform: scale(1.1);
+}
+
+/* Animaciones para los modales */
+.component-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.component-modal.active .modal-content {
+    transform: scale(1);
+    animation: modalPop 0.5s ease forwards;
+}
+
+@keyframes modalPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.component-modal.closing .modal-content {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .components-grid .row {
+        justify-content: center;
+    }
+    
+    .component-item {
+        width: 180px;
+    }
+    
+    .component-circle {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .modal-inner {
+        flex-direction: column;
+    }
+    
+    .modal-left, .modal-right {
+        width: 100%;
+        flex: none;
+    }
+    
+    .modal-left {
+        max-height: 60vh; /* Ajustar altura en dispositivos más pequeños */
+    }
+    
+    .modal-info {
+        max-height: calc(60vh - 70px); /* Ajustar altura del contenido en dispositivos más pequeños */
+    }
+    
+    .modal-content {
+        width: 90%;
+        max-height: 90vh;
+    }
+    
+    .modal-image-circle {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+    }
+    
+    .modal-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .components-title h1 {
+        font-size: 2.8rem;
+    }
+    
+    .components-grid .row {
+        gap: 10px;
+    }
+    
+    .component-item {
+        width: 160px;
+    }
+    
+    .component-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .component-item p {
+        font-size: 0.9rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-info p {
+        font-size: 1rem;
+    }
+    
+    .modal-image-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .components-grid {
+        gap: 15px;
+    }
+    
+    .components-grid .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .component-item {
+        width: 130px;
+    }
+    
+    .component-circle {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .component-item p {
+        font-size: 0.8rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-image-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-info {
+        padding: 15px;
+    }
+    
+    .modal-info p, .modal-info ul li {
+        font-size: 0.9rem;
+    }
+}

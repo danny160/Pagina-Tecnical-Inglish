@@ -43,17 +43,433 @@
         </ul>
     </div>
 
-    <!-- Main limpio -->
-    <main>
-        <div class="container text-center">
-            <p class="lead">contenido del components</p>
+    <!-- Main con el contenido de Components -->
+    <main id="mainContent">
+        <div class="components-container">
+            <!-- Título principal -->
+            <div class="components-title animate-element">
+                <h1>COMPONENTS</h1>
+            </div>
+            
+            <!-- Grid de componentes -->
+            <div class="components-grid">
+                <!-- Fila 1 -->
+                <div class="row">
+                    <!-- Motherboard -->
+                    <div class="component-item animate-element" style="animation-delay: 0.2s;">
+                        <div class="component-circle" onclick="openModal('motherboard-modal')">
+                            <img src="../csr/Img/modeboar.png" alt="Motherboard">
+                        </div>
+                        <p>Motherboard</p>
+                    </div>
+                    
+                    <!-- Processor -->
+                    <div class="component-item animate-element" style="animation-delay: 0.3s;">
+                        <div class="component-circle" onclick="openModal('cpu-modal')">
+                            <img src="../csr/Img/cpu.png" alt="Processor">
+                        </div>
+                        <p>Processor (CPU)</p>
+                    </div>
+                    
+                    <!-- RAM -->
+                    <div class="component-item animate-element" style="animation-delay: 0.4s;">
+                        <div class="component-circle" onclick="openModal('ram-modal')">
+                            <img src="../csr/Img/ram.png" alt="RAM">
+                        </div>
+                        <p>RAM</p>
+                    </div>
+                    
+                    <!-- Storage -->
+                    <div class="component-item animate-element" style="animation-delay: 0.5s;">
+                        <div class="component-circle" onclick="openModal('storage-modal')">
+                            <img src="../csr/Img/disck.avif" alt="Storage">
+                        </div>
+                        <p>Hard disk or<br>SSD (storage)</p>
+                    </div>
+                </div>
+                
+                <!-- Fila 2 -->
+                <div class="row">
+                    <!-- Graphics Card - Ahora primero -->
+                    <div class="component-item animate-element" style="animation-delay: 0.6s;">
+                        <div class="component-circle" onclick="openModal('gpu-modal')">
+                            <img src="../csr/Img/gpu.png" alt="Graphics Card">
+                        </div>
+                        <p>Graphics card (GPU)</p>
+                    </div>
+
+                    <!-- Cooling System - Ahora segundo -->
+                    <div class="component-item animate-element" style="animation-delay: 0.7s;">
+                        <div class="component-circle" onclick="openModal('cooling-modal')">
+                            <img src="../csr/Img/colingsystem.png" alt="Cooling System">
+                        </div>
+                        <p>Cooling system</p>
+                    </div>
+
+                    <!-- Power Supply - Ahora tercero -->
+                    <div class="component-item animate-element" style="animation-delay: 0.8s;">
+                        <div class="component-circle" onclick="openModal('psu-modal')">
+                            <img src="../csr/Img/fuentePoder.png" alt="Power Supply">
+                        </div>
+                        <p>Power Supply Unit<br>(PSU)</p>
+                    </div>
+                    
+                    <!-- Cabinet - Ahora cuarto -->
+                    <div class="component-item animate-element" style="animation-delay: 0.9s;">
+                        <div class="component-circle" onclick="openModal('case-modal')">
+                            <img src="../csr/Img/torre.png" alt="Cabinet">
+                        </div>
+                        <p>Cabinet<br>(tower or case)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Modales para cada componente -->
+    <!-- Modal Motherboard -->
+    <div id="motherboard-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>MOTHERBOARD</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>The motherboard is the main circuit board of a computer that connects and allows communication between all the critical components of a system. It serves as the backbone that houses the CPU, memory, expansion cards, and provides connectivity for all peripherals.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>It contains circuits, chipsets, and buses that transfer data between components. The motherboard's chipset determines what components are compatible and how they communicate. It also manages power distribution to all connected components.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Form Factor:</span> ATX, Micro-ATX, Mini-ITX (determines size and compatibility with cases)</li>
+                            <li><span class="brand">Socket Type:</span> Determines which CPU series is compatible (e.g., AM5 for AMD, LGA 1700 for Intel)</li>
+                            <li><span class="brand">Chipset:</span> Determines features, overclocking capabilities, and expansion options</li>
+                            <li><span class="brand">Memory Support:</span> Maximum RAM capacity and supported speeds</li>
+                            <li><span class="brand">Expansion Slots:</span> Number and type of PCIe slots for graphics cards and other expansions</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">ASUS ROG Strix Z790-E Gaming WiFi:</span> High-end motherboard for Intel 13th/14th gen processors with excellent VRM for overclocking, WiFi 6E, PCIe 5.0, and extensive RGB support. Ideal for gaming and high-performance builds.</p>
+                        <p><span class="brand">MSI MPG B650 Gaming Edge WiFi:</span> Mid-range motherboard for AMD Ryzen 7000 processors with good power delivery, WiFi 6E, PCIe 5.0, and M.2 Shield Frozr for cooling SSDs. Great balance of features and price.</p>
+                        <p><span class="brand">Gigabyte B760M DS3H:</span> Budget-friendly option for Intel 13th/14th gen processors with solid basic features, PCIe 4.0 support, and decent expansion options. Perfect for office or entry-level gaming PCs.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/modeboar.png" alt="Motherboard">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('motherboard-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CPU -->
+    <div id="cpu-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>PROCESSOR (CPU)</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>The CPU (Central Processing Unit) is the primary component that executes instructions and processes data. It's often called the "brain" of the computer, handling calculations, logic operations, and controlling the flow of data throughout the system.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>The CPU fetches instructions from memory, decodes them, executes the operations, and then stores the results. Modern CPUs contain multiple cores that can process instructions simultaneously, and many include integrated graphics processors for basic display functions.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Cores/Threads:</span> More cores allow for better multitasking and performance in parallel workloads</li>
+                            <li><span class="brand">Clock Speed:</span> Measured in GHz, higher speeds generally mean better performance in single-threaded tasks</li>
+                            <li><span class="brand">Cache:</span> Faster memory built into the CPU that improves performance</li>
+                            <li><span class="brand">TDP (Thermal Design Power):</span> Indicates power consumption and cooling requirements</li>
+                            <li><span class="brand">Architecture:</span> Newer architectures typically offer better performance and efficiency</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Intel Core i9-14900K:</span> High-end processor with 24 cores (8P+16E) and 32 threads, up to 6.0GHz boost clock. Excellent for demanding tasks like 3D rendering, video editing, and high-end gaming. Supports DDR5 memory and PCIe 5.0.</p>
+                        <p><span class="brand">AMD Ryzen 9 7950X:</span> Powerful 16-core, 32-thread processor with up to 5.7GHz boost clock. Exceptional multi-threaded performance for content creation, streaming, and professional workloads. Features integrated Radeon graphics and supports DDR5 memory.</p>
+                        <p><span class="brand">Intel Core i5-14600K:</span> Mid-range 14-core (6P+8E) processor with 20 threads and up to 5.3GHz boost. Excellent price-to-performance ratio for gaming and productivity. Good choice for mainstream gaming PCs and workstations.</p>
+                        <p><span class="brand">AMD Ryzen 5 7600X:</span> 6-core, 12-thread processor with up to 5.3GHz boost. Great mid-range option with strong single-core performance for gaming and everyday tasks. Includes integrated graphics for systems without dedicated GPUs.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/cpu.png" alt="Processor">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('cpu-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal RAM -->
+    <div id="ram-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>RAM</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>RAM (Random Access Memory) is the temporary, high-speed storage that holds data the CPU is actively using. It provides quick access to information that programs need to function, significantly improving system performance compared to retrieving data from storage drives.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>Unlike storage drives, RAM is volatile memory that loses its data when power is turned off. It serves as a workspace for the CPU, temporarily storing program code, operating system functions, and data being processed. More RAM allows for more programs to run simultaneously without slowdowns.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Capacity:</span> Measured in GB, more capacity allows for more programs to run simultaneously (16GB is standard for gaming, 32GB+ for professional work)</li>
+                            <li><span class="brand">Speed:</span> Measured in MHz, higher speeds provide faster data transfer (DDR4: 2400-4800MHz, DDR5: 4800-7200MHz+)</li>
+                            <li><span class="brand">Latency:</span> Lower CAS latency (CL) numbers indicate better performance</li>
+                            <li><span class="brand">Type:</span> DDR4 vs. DDR5 (newer DDR5 offers higher bandwidth but with higher latency)</li>
+                            <li><span class="brand">Channels:</span> Dual or quad-channel configurations improve performance</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Corsair Vengeance RGB Pro DDR4-3600:</span> High-performance memory with customizable RGB lighting, tight timings (CL18), and excellent compatibility with most motherboards. Available in kits from 16GB to 128GB. Great for gaming systems with RGB setups.</p>
+                        <p><span class="brand">G.Skill Trident Z5 RGB DDR5-6000:</span> Premium DDR5 memory with CL36 timings, optimized for Intel and AMD platforms. Features aluminum heat spreaders and customizable RGB lighting. Ideal for high-end builds using the latest platforms.</p>
+                        <p><span class="brand">Kingston Fury Beast DDR4-3200:</span> Reliable, cost-effective memory with good performance (CL16) and low-profile heat spreaders. Available in various capacities and compatible with XMP profiles for easy overclocking. Great value option for mainstream builds.</p>
+                        <p><span class="brand">Crucial DDR5-4800:</span> No-frills DDR5 memory focused on reliability and compatibility. Offers good baseline performance for DDR5 systems without the premium price of higher-clocked options. Good choice for productivity-focused builds.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/ram.png" alt="RAM">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('ram-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Storage -->
+    <div id="storage-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>STORAGE</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>Storage devices permanently store all your data, including the operating system, programs, documents, photos, videos, and games. Unlike RAM, storage retains information even when the computer is powered off, providing long-term data preservation.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>There are several types of storage technologies. HDDs (Hard Disk Drives) use magnetic platters and mechanical read/write heads, while SSDs (Solid State Drives) use flash memory chips with no moving parts. NVMe SSDs connect directly to the PCIe bus for even faster speeds than SATA SSDs.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Type:</span> HDD (capacity-focused), SATA SSD (balanced), NVMe SSD (performance-focused)</li>
+                            <li><span class="brand">Capacity:</span> Measured in GB or TB, determines how much data can be stored</li>
+                            <li><span class="brand">Speed:</span> Read/write speeds measured in MB/s or GB/s</li>
+                            <li><span class="brand">Interface:</span> SATA (up to 600MB/s), PCIe 3.0 (up to 3500MB/s), PCIe 4.0 (up to 7000MB/s), PCIe 5.0 (up to 14000MB/s)</li>
+                            <li><span class="brand">Endurance:</span> Measured in TBW (Terabytes Written), indicates lifespan</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Samsung 990 Pro NVMe PCIe 4.0:</span> High-performance NVMe SSD with sequential read speeds up to 7,450MB/s and write speeds up to 6,900MB/s. Features a nickel-coated controller for heat management and excellent reliability. Ideal for gaming, content creation, and professional workloads.</p>
+                        <p><span class="brand">WD Black SN850X NVMe PCIe 4.0:</span> Gaming-focused NVMe SSD with read speeds up to 7,300MB/s and a specialized Game Mode that optimizes performance. Available with or without a heatsink for different system configurations.</p>
+                        <p><span class="brand">Crucial MX500 SATA SSD:</span> Reliable SATA SSD with read/write speeds up to 560/510MB/s. Offers good performance for systems without NVMe slots or as secondary storage. Great value option with hardware encryption support.</p>
+                        <p><span class="brand">Seagate Barracuda HDD:</span> Cost-effective hard drive available in capacities up to 8TB with 7200RPM spindle speed. Ideal for mass storage of media files, backups, and other data that doesn't require fast access speeds.</p>
+                        <p><span class="brand">Sabrent Rocket 4 Plus PCIe 4.0:</span> High-performance NVMe SSD with read speeds up to 7,100MB/s and capacities up to 4TB. Features dynamic SLC caching for sustained performance during large file transfers.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/disck.avif" alt="Storage">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('storage-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal GPU -->
+    <div id="gpu-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>GRAPHICS CARD (GPU)</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>The graphics card (GPU) is responsible for rendering images, videos, and animations to display on your monitor. It handles the complex calculations needed for 3D graphics in games, video editing, 3D modeling, and other visually intensive tasks, offloading this work from the CPU.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>Modern GPUs contain thousands of small processing cores working in parallel to render graphics. They have dedicated video memory (VRAM) to store textures, frame buffers, and other graphical data. GPUs also accelerate tasks like video encoding/decoding, AI processing, and scientific calculations.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">GPU Architecture:</span> Newer architectures offer better performance and features</li>
+                            <li><span class="brand">VRAM:</span> Amount and type (GDDR6, GDDR6X) affects performance with high-resolution textures and multiple monitors</li>
+                            <li><span class="brand">Core Count:</span> More CUDA cores (NVIDIA) or Stream Processors (AMD) generally mean better performance</li>
+                            <li><span class="brand">Clock Speed:</span> Base and boost clocks affect performance</li>
+                            <li><span class="brand">Power Requirements:</span> TDP rating and recommended PSU wattage</li>
+                            <li><span class="brand">Ray Tracing/AI Capabilities:</span> Special hardware for realistic lighting and AI-enhanced features</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">NVIDIA GeForce RTX 4090:</span> Flagship GPU with 24GB GDDR6X memory and exceptional performance for 4K and 8K gaming, AI workloads, and professional rendering. Features advanced ray tracing capabilities and DLSS 3 frame generation technology. Requires substantial power (450W TDP) and cooling.</p>
+                        <p><span class="brand">AMD Radeon RX 7900 XTX:</span> High-end GPU with 24GB GDDR6 memory offering excellent performance for 4K gaming and content creation. Features AMD's RDNA 3 architecture with improved ray tracing and FSR upscaling technology. More power-efficient than competing NVIDIA options.</p>
+                        <p><span class="brand">NVIDIA GeForce RTX 4070:</span> Mid-range GPU with 12GB GDDR6X memory that delivers excellent 1440p gaming performance and good 4K capabilities. Efficient power consumption (200W TDP) makes it suitable for smaller builds while still offering ray tracing and DLSS benefits.</p>
+                        <p><span class="brand">AMD Radeon RX 7600:</span> Budget-friendly GPU with 8GB GDDR6 memory that provides solid 1080p gaming performance. Good option for entry-level gaming PCs or as an upgrade for older systems. Supports modern features like AV1 encoding and AMD's FSR technology.</p>
+                        <p><span class="brand">NVIDIA GeForce RTX 4060 Ti:</span> Efficient mid-range GPU with 8GB GDDR6 memory that balances performance and power consumption (160W TDP). Excellent for 1080p and 1440p gaming with support for ray tracing and DLSS. Good option for compact builds.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/gpu.png" alt="Graphics Card">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('gpu-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cooling -->
+    <div id="cooling-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>COOLING SYSTEM</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>Cooling systems remove heat generated by computer components, particularly the CPU and GPU, to prevent thermal throttling and potential damage. Effective cooling ensures optimal performance, stability, and longevity of your system, especially during intensive tasks like gaming or rendering.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>There are several cooling methods: Air cooling uses heatsinks with metal fins to dissipate heat, paired with fans to move air. Liquid cooling circulates coolant through a closed loop to transfer heat from components to a radiator. Both methods work to maintain safe operating temperatures under load.</p>
+                        
+                        <h3 class="highlight-blue">Types of cooling solutions:</h3>
+                        <ul>
+                            <li><span class="brand">Air Coolers:</span> Budget-friendly, reliable, and maintenance-free. Range from stock coolers to large tower designs with multiple fans</li>
+                            <li><span class="brand">AIO (All-In-One) Liquid Coolers:</span> Closed-loop systems with pre-filled coolant, radiator, pump, and fans. Easier to install than custom loops</li>
+                            <li><span class="brand">Custom Liquid Cooling:</span> Advanced solution with separate components (pump, reservoir, radiators, tubing). Offers best performance but requires maintenance</li>
+                            <li><span class="brand">Case Fans:</span> Additional fans that improve airflow through the case, creating positive or negative pressure</li>
+                            <li><span class="brand">Passive Cooling:</span> Heatsinks without fans, relying solely on natural convection (used in low-power systems)</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Noctua NH-D15:</span> Premium dual-tower air cooler with two 140mm fans. Offers cooling performance comparable to many AIO liquid coolers while operating quietly. Compatible with most CPU sockets and includes high-quality thermal paste. Ideal for high-performance builds where reliability is prioritized over aesthetics.</p>
+                        <p><span class="brand">Corsair iCUE H150i Elite Capellix:</span> 360mm AIO liquid cooler with three 120mm RGB fans and a customizable pump head. Provides excellent cooling for high-end CPUs and overclocking. Integrates with Corsair's iCUE software for RGB control and performance monitoring.</p>
+                        <p><span class="brand">be quiet! Dark Rock Pro 4:</span> High-performance air cooler with dual towers and a silent 135mm fan. Offers excellent cooling with minimal noise (24.3 dBA). Features a black design that complements most build aesthetics and supports most modern CPU sockets.</p>
+                        <p><span class="brand">Arctic Liquid Freezer II 240:</span> Value-oriented 240mm AIO liquid cooler with excellent performance-to-price ratio. Features a unique VRM cooling fan on the pump head for improved motherboard cooling. Operates quietly and uses optimized P-series fans for high static pressure.</p>
+                        <p><span class="brand">Cooler Master Hyper 212 RGB:</span> Budget-friendly air cooler with good performance for mid-range CPUs. Features four direct-contact heat pipes, a 120mm RGB fan, and universal mounting for most sockets. Great entry-level upgrade from stock coolers.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/colingsystem.png" alt="Cooling System">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('cooling-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal PSU -->
+    <div id="psu-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>POWER SUPPLY UNIT (PSU)</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>The Power Supply Unit (PSU) converts AC power from your wall outlet into the DC power that computer components require. It provides stable, clean power at various voltage levels (12V, 5V, 3.3V) to all components in your system, ensuring reliable operation and protecting against power fluctuations.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>The PSU transforms high-voltage alternating current into lower-voltage direct current through a series of transformers, capacitors, and voltage regulators. Modern PSUs use switching technology for higher efficiency. They also include protection circuits against overload, overvoltage, and short circuits.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Wattage:</span> Total power output capacity (typically 550-850W for gaming PCs, 1000W+ for high-end builds)</li>
+                            <li><span class="brand">Efficiency Rating:</span> 80 PLUS certification (Bronze, Silver, Gold, Platinum, Titanium) indicates energy efficiency</li>
+                            <li><span class="brand">Modularity:</span> Non-modular, semi-modular, or fully modular cable management</li>
+                            <li><span class="brand">Rail Design:</span> Single +12V rail vs. multiple rails for power distribution</li>
+                            <li><span class="brand">Form Factor:</span> ATX, SFX (for small form factor builds), etc.</li>
+                            <li><span class="brand">Protection Features:</span> OVP, UVP, OCP, OPP, SCP, OTP for component safety</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Seasonic Prime TX-850:</span> High-end 850W power supply with 80 PLUS Titanium efficiency (94%+ efficiency). Features fully modular cables, hybrid fan mode for silent operation at low loads, and premium Japanese capacitors rated for 105°C. Backed by a 12-year warranty, making it ideal for high-performance workstations and gaming rigs.</p>
+                        <p><span class="brand">Corsair RM850x:</span> Popular 850W power supply with 80 PLUS Gold efficiency and fully modular cables. Uses all-Japanese capacitors and a zero RPM fan mode for silent operation at low loads. Offers excellent voltage regulation and comes with a 10-year warranty. Great balance of performance and value.</p>
+                        <p><span class="brand">EVGA SuperNOVA 750 G6:</span> Compact 750W power supply with 80 PLUS Gold efficiency and fully modular design. Features a 135mm fluid dynamic bearing fan for quiet operation and includes ECO Mode for fan control. Offers comprehensive protection features and a 10-year warranty.</p>
+                        <p><span class="brand">be quiet! Pure Power 11 FM 650W:</span> Mid-range 650W power supply with 80 PLUS Gold efficiency and semi-modular cables. Features silent operation with a 120mm fan and provides stable power delivery for mainstream gaming systems. Good option for quiet builds with moderate power requirements.</p>
+                        <p><span class="brand">Cooler Master MWE 550 Bronze V2:</span> Budget-friendly 550W power supply with 80 PLUS Bronze efficiency. Features a non-modular design with essential protections and a 120mm fan. Good option for entry-level builds and office PCs with basic components.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/fuentePoder.png" alt="Power Supply">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('psu-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Case -->
+    <div id="case-modal" class="component-modal">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <div class="modal-header">
+                        <h2>CABINET (TOWER OR CASE)</h2>
+                    </div>
+                    <div class="modal-info">
+                        <h3 class="highlight-blue">¿What it is used for?</h3>
+                        <p>The computer case (cabinet or tower) houses and protects all components while providing proper airflow for cooling. Beyond its functional purpose, the case also defines the aesthetic of your build, available space for components, and potential for future upgrades.</p>
+                        
+                        <h3 class="highlight-blue">How it works:</h3>
+                        <p>Cases are designed with mounting points for the motherboard, drive bays for storage, slots for expansion cards, and spaces for fans or radiators. Modern cases focus on cable management, airflow optimization, and tool-less installation. They often include dust filters to maintain a clean internal environment.</p>
+                        
+                        <h3 class="highlight-blue">Key specifications to consider:</h3>
+                        <ul>
+                            <li><span class="brand">Form Factor:</span> Full Tower, Mid Tower, Mini Tower, Small Form Factor (determines size and component compatibility)</li>
+                            <li><span class="brand">Motherboard Support:</span> E-ATX, ATX, Micro-ATX, Mini-ITX compatibility</li>
+                            <li><span class="brand">Expansion Slots:</span> Number of PCI slots available for graphics cards and other expansions</li>
+                            <li><span class="brand">Drive Bays:</span> Number and type of bays for 2.5" SSDs and 3.5" HDDs</li>
+                            <li><span class="brand">Cooling Options:</span> Fan mounting points, radiator support, included fans</li>
+                            <li><span class="brand">I/O Ports:</span> Front/top panel connections (USB, audio, etc.)</li>
+                            <li><span class="brand">GPU Clearance:</span> Maximum graphics card length supported</li>
+                        </ul>
+                        
+                        <h3 class="highlight-blue">Brands and models:</h3>
+                        <p><span class="brand">Lian Li PC-O11 Dynamic:</span> Popular mid-tower case with dual-chamber design for optimal airflow and cable management. Features tempered glass panels, support for up to 9 fans or multiple radiators, and excellent water-cooling compatibility. Available in various versions including the EVO and Mini with different sizes and features.</p>
+                        <p><span class="brand">Fractal Design Meshify 2:</span> Airflow-focused mid-tower with mesh front panel and modular interior. Supports E-ATX motherboards, multiple radiator configurations, and up to 11 storage drives. Features tool-less design, USB-C front panel, and adjustable layout for different cooling priorities.</p>
+                        <p><span class="brand">Corsair 4000D Airflow:</span> Mid-tower case with excellent airflow from its perforated front panel. Includes cable management channels, two 120mm fans, and support for up to 360mm radiators. Offers a clean, minimalist design with easy building experience at a reasonable price point.</p>
+                        <p><span class="brand">NZXT H7 Flow:</span> Modern mid-tower with perforated panels for maximum airflow. Features a minimalist design, integrated RGB controller, vertical GPU mount option, and excellent cable management system. Supports up to E-ATX motherboards and 360mm radiators.</p>
+                        <p><span class="brand">Cooler Master NR200P:</span> Compact Mini-ITX case that supports full-size components despite its small footprint. Includes both mesh and tempered glass side panels, supports vertical GPU mounting, and can accommodate dual 240mm radiators. Perfect for powerful small form factor builds.</p>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-image-circle">
+                        <img src="../csr/Img/torre.png" alt="Cabinet">
+                    </div>
+                    <button class="close-modal" onclick="closeModal('case-modal')">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para el fondo oscuro -->
+    <div id="modal-overlay"></div>
 
     <!-- Footer nuevo -->
     <footer class="text-center py-4" style="background-color: #3a0a2e; color: white;">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Deep Tech. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2025 Deep Tech. All rights reserved.</p>
         </div>
     </footer>
 
