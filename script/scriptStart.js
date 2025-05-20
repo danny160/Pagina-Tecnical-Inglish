@@ -138,7 +138,7 @@ const chatToggleBtn = document.getElementById('chat-toggle-btn');
 const closeChatBtn = document.getElementById('close-chat-btn');
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 
 // pront incial del sistema
 const systemPrompt = {
