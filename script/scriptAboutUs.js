@@ -2,12 +2,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sideMenu = document.getElementById('sideMenu');
+    const mainContent = document.getElementById('mainContent');
     const menuItems = document.querySelectorAll('.menu-items li');
     
     // Función para reiniciar las animaciones del menú
     function resetMenuAnimations() {
         // Primero quitamos la clase active para ocultar el menú
         sideMenu.classList.remove('active');
+        
+        // Ajustamos el contenido principal
+        mainContent.style.width = '100%';
+        mainContent.style.marginRight = '0';
         
         // Esperamos a que termine la transición de cierre
         setTimeout(() => {
@@ -32,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para abrir el menú
     function openMenu() {
         sideMenu.classList.add('active');
+        
+        // Ajustamos el contenido principal
+        mainContent.style.width = 'calc(100% - 210px)';
+        mainContent.style.marginRight = '210px';
     }
     
     // Manejador de eventos para el botón de menú
@@ -74,5 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
+    
+    // Reiniciar animaciones cuando se recarga la página
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Si la página se carga desde la caché (al volver atrás)
+            // Reiniciamos las animaciones
+            const animateElements = document.querySelectorAll('.animate-element');
+            animateElements.forEach(element => {
+                element.style.animation = 'none';
+                void element.offsetWidth;
+                element.style.animation = '';
+            });
+        }
     });
 });

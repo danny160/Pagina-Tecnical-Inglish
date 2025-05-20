@@ -121,11 +121,11 @@ header {
 
 /* Menú lateral */
 .side-menu {
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 70px;
     right: -210px;
     width: 210px;
-    height: 100%;
+    height: calc(100% - 70px);
     background-color: #3a0a2e;
     transition: right 0.3s ease;
     z-index: 1000;
@@ -210,9 +210,164 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 120px);
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    padding: 20px;
+    transition: all 0.3s ease;
 }
 
+/* Animaciones para elementos */
+.animate-element {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-title.animate-element { animation-delay: 0.2s; }
+.about-description.animate-element { animation-delay: 0.4s; }
+.mission-box.animate-element { animation-delay: 0.6s; }
+.vision-box.animate-element { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el contenido de About Us */
+.about-us-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Título principal */
+.about-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-title h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FFD700; /* Color amarillo para el título */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Descripción principal */
+.about-description {
+    /* background-color: rgba(169, 169, 169, 0.7); Fondo gris semi-transparente */
+    background-color: #8A95A5;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.description-text {
+    flex: 3;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.description-text p strong {
+    font-weight: bold;
+}
+
+.description-icon {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen del logo de personas */
+.people-logo {
+    width: 260px;
+    height: auto;
+    animation: floatAnimation 3s ease-in-out infinite;
+    
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Sección de Misión y Visión */
+.mission-vision-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mission-box, .vision-box {
+    flex: 1;
+    /* background-color: rgba(169, 169, 169, 0.7); Fondo gris semi-transparente */
+    background-color: #8A95A5;
+    border-radius: 10px;
+    padding: 20px;
+    color: #000;
+}
+
+.mission-box h2, .vision-box h2 {
+    color: #190B47; /* Color azul para los títulos */
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Texto más grande en misión y visión */
+.mission-box p, .vision-box p {
+    font-size: 1.3rem; /* Aumentado de tamaño */
+    line-height: 1.5;
+    font-weight: 500; /* Un poco más de peso para mejor legibilidad */
+}
+
+
+/* Ajuste para cuando el menú está activo */
+.side-menu.active ~ #mainContent {
+    width: calc(100% - 210px);
+    margin-right: 210px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mission-vision-container {
+        flex-direction: column;
+    }
+    
+    .about-description {
+        flex-direction: column;
+    }
+    
+    .description-icon {
+        margin-top: 20px;
+    }
+    
+    .about-title h1 {
+        font-size: 3rem;
+    }
+    
+    .people-logo {
+        width: 120px;
+
+    }
+}
