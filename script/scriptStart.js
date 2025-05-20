@@ -205,7 +205,7 @@ themeToggle.addEventListener('click', () => {
         chatContainer.classList.add('dark');
         messagesEl.classList.add('dark');
         inputForm.classList.add('dark');
-        themeToggle.innerHTML = '<img src="/Pagina-Tecnical-Inglish/csr/Img/sol_dia.png" style="display:flex; width: 20px;" alt="">'; // Cambia el icono por una imagen personalizada
+        themeToggle.innerHTML = '<img src="../csr/Img/sol_dia.png" style="display:flex; width: 20px;" alt="">'; // Cambia el icono por una imagen personalizada
         closeChatBtn.classList.add('dark');
     } else {
         body.classList.remove('dark');
@@ -213,7 +213,7 @@ themeToggle.addEventListener('click', () => {
         chatContainer.classList.remove('dark');
         messagesEl.classList.remove('dark');
         inputForm.classList.remove('dark');
-        themeToggle.innerHTML = '<img src="/Pagina-Tecnical-Inglish/csr/Img/luna_noche.png" style="display:flex; width: 20px;" alt="">'; // Cambia el icono por una imagen personalizada
+        themeToggle.innerHTML = '<img src="../csr/Img/luna_noche.png" style="display:flex; width: 20px;" alt="">'; // Cambia el icono por una imagen personalizada
         closeChatBtn.classList.remove('dark');
     }
 });
